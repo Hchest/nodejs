@@ -134,6 +134,8 @@ const ch17OneFU = `SELECT DISTINCT
 const zhe1 = `SELECT PATIENT_NO FROM [dbo].[PAT_VISIT] WHERE HOSPITAL_ID='5edc463fa828078d' AND UPDATE_DATE>'2020'`
 // 复旦中山
 const fdzs = `SELECT PATIENT_NO FROM [dbo].[PAT_VISIT] WHERE HOSPITAL_ID='12b2fd726e2f8a8d'`
+// 海军长征
+const hjcz = `SELECT PATIENT_NO FROM [dbo].[PAT_VISIT] WHERE HOSPITAL_ID='d8823ba9be9b8a8d'`
 
 // 查询梁总的入组字段
 const liang = `SELECT PATIENT_NO FROM [dbo].[tmp_liang]`
@@ -141,8 +143,9 @@ const liang = `SELECT PATIENT_NO FROM [dbo].[tmp_liang]`
 // 王梦一 10363
 const wmy = `SELECT PATIENT_NO FROM [dbo].[PAT_VISIT] WHERE SD_CODE='YXA_O' AND SD_GROUP='1' AND DISCHARGE_DATE>='2016-01-01 00:00:00.000' AND DISCHARGE_DATE<='2018-12-31 00:00:00.000'`
 
+// 王梦一 9985
 const wmy9985 = `SELECT PATIENT_NO FROM [dbo].[wmy9985]`
 
 const id = `SELECT PATIENT_NO FROM [dbo].[PAT_VISIT] WHERE PATIENT_NO='d276f2dd3e00b487'`
 
-module.exports = id
+module.exports = hjcz

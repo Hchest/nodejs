@@ -1,11 +1,10 @@
 /**
  * 探索下载病历新的写法
- * TODO 多级表头
+ * 一行一行下载
  */
 'use strict';
 const sql = require('../dbs/sqlServer-t.js'),
     XLSX = require("xlsx"),
-    { desensitization } = require('./utils')
 
 class DownCase {
     constructor() {

@@ -1,5 +1,4 @@
-const Connection = require('tedious').Connection;
-const Request = require('tedious').Request;
+const { Connection, Request } = require('tedious');
 const config = require("../config.js")
 
 module.exports = {
@@ -8,7 +7,7 @@ module.exports = {
 
         const CON = new Connection(config.tdb_addr)
         return new Promise((resolve, reject) => {
-            CON.on('connect', function (err) {  // 连接数据库，执行匿名函数
+            CON.connect(function (err) {  // 连接数据库，执行匿名函数
                 if (err) {
                     console.error('数据库连接错误：请检查账号、密码是否正确,且数据库存在\n' + err)
                 } else {
@@ -31,8 +30,6 @@ module.exports = {
                     CON.execSql(request);   // 执行sql语句
                 }
             });
-
-
         })
     }
 }

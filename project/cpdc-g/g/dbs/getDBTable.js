@@ -21,6 +21,7 @@ async function startup () {
     try {
         const dbList = await mssql.query(`SELECT Name FROM Master..SysDatabases ORDER BY Name`)
         dbList.forEach(async table => {
+            console.log(table)
             const res = await mssql.query(`SELECT Name FROM ${table.Name}..SysObjects Where XType='U' ORDER BY Name`)
             var showTable = readSyncByfs("是否查看数据库 " + table.Name + " (y or n) : ")
             if (showTable !== "n") {
